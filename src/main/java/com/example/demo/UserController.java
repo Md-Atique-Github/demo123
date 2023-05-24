@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/User")
-@Service
+@RequestMapping("/user")
+//@Service
 public class UserController {
 
 @Autowired
@@ -23,11 +23,11 @@ private IUserRepository iUserRepository;
 
     
     @PostMapping("/post")
-    public void saveData(@RequestBody User User){
-         iUserRepository.save(User);
+    public void saveData(@RequestBody User user){
+         iUserRepository.save(user);
     }
     
-    @GetMapping("/{id}")
+    @GetMapping("")
     public List<User> getData(){
        return  iUserRepository.findAll();
     }
